@@ -7,7 +7,16 @@ VERSE
   end
 
   def verses(firstNum, secondNum)
-    "#{verse(firstNum)}\n#{verse(secondNum)}"
+    range = (secondNum..firstNum).to_a.reverse
+
+    verses = ""
+    range.each do |num|
+      verses += verse(num)
+      verses += "\n"
+    end
+    puts "********* VERSES: #{verses}"
+
+    verses.strip
   end
 
   private
